@@ -2,7 +2,7 @@ apiVersion: skaffold/v1beta2
 kind: Config
 build:
   artifacts:
-  - image: vaultops/awesome-go
+  - image: jiangytcn/awesome-go
     context: .
     docker: {}
   tagPolicy:
