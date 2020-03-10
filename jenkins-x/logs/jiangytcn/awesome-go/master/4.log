@@ -1,0 +1,92 @@
+
+Showing logs for build [32mjiangytcn-awesome-go-master-kn66f-4[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-j2rgt[0m
+{"level":"warn","ts":1583816501.7983882,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583816501.798694,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjiangytcn-awesome-go-master-kn66f-4[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-lxrhn[0m
+{"level":"warn","ts":1583816502.0259745,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583816502.0266895,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjiangytcn-awesome-go-master-kn66f-4[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjiangytcn-awesome-go-master-kn66f-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-jiangytcn-awesome-go-master-kn66f-ddv6c[0m
+{"level":"warn","ts":1583816507.2578714,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583816510.1240075,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/awesome-go.git @ v0.0.5 in path /workspace/source"}
+
+Showing logs for build [32mjiangytcn-awesome-go-master-kn66f-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:e3102dfcf27fdc37407a9e0b1b0c8f15426fda60
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mjiangytcn-awesome-go-master-kn66f-4[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mjiangytcn-awesome-go-master-kn66f-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/awesome-go main.go
+
+Showing logs for build [32mjiangytcn-awesome-go-master-kn66f-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/awesome-go"]                   
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/03/10 05:02:06 pushed blob: sha256:dd666e14dac79cfcdfce469f1bef18bcf5a11fae71d5fcd9a59fca91c8c9ccd4
+2020/03/10 05:02:11 pushed blob: sha256:64c8bfc5cd09b625cd55e032921fd1a857b9e9389172f1bf638c6736d4de1fb4
+2020/03/10 05:02:11 index.docker.io/*********/awesome-go:0.0.5: digest: sha256:6c596d8b58686e2d2a4c6ed257c01c95fc73a067fc1b6d7aa3c5304ed4c964d1 size: 428
+
+Showing logs for build [32mjiangytcn-awesome-go-master-kn66f-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mjiangytcn-awesome-go-master-kn66f-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/awesome-go to an unshallow repository
+Generating change log from git ref d87cab2a4353ba7c864005fbb79d007c2d1d56e3 => 172d81eea40151048c72ea2abcb7950160c6df3c
+Associating user x-0 in users.jenkins.io with email jiangyt.cn@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit e3102dfcf27fdc37407a9e0b1b0c8f15426fda60 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email jiangyt.cn@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit e3102dfcf27fdc37407a9e0b1b0c8f15426fda60 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for *********/awesome-go and tag v0.0.5 so creating a new release
+Updated the release information at https://github.com/*********/awesome-go/releases/tag/v0.0.5
+generated: /workspace/source/charts/awesome-go/templates/release.yaml
+Created Release awesome-go-0-0-5 resource in namespace **
+Updating PipelineActivity *********-awesome-go-master-4 with version 0.0.5
+Updated PipelineActivities *********-awesome-go-master-4 with release notes URL: https://github.com/*********/awesome-go/releases/tag/v0.0.5
+
+Showing logs for build [32mjiangytcn-awesome-go-master-kn66f-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file awesome-go-0.0.5.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mjiangytcn-awesome-go-master-kn66f-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app awesome-go version 0.0.5 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/*********/environment-default-staging/pull/6
+Added label updatebot to Pull Request https://github.com/*********/environment-default-staging/pull/6
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*********/environment-default-staging/pull/6 ref c71116aac856bd1967476fccdfe1789e03adb799 Could not find a status for repository *********/environment-default-staging with ref c71116aac856bd1967476fccdfe1789e03adb799
+got git provider status pending from PR https://github.com/*********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/*********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/*********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/*********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/*********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/*********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/*********/environment-default-staging/pull/6
+Pull Request https://github.com/*********/environment-default-staging/pull/6 is merged at sha 4ec35511a835364084e096b29bea2fd8f633d7ec
+Pull Request merged but we are not waiting for the update pipeline to complete!
