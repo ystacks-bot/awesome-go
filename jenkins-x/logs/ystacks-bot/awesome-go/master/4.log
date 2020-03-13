@@ -1,0 +1,87 @@
+
+Showing logs for build [32mystacks-bot-awesome-go-master-xldps-4[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-skcq9[0m
+{"level":"warn","ts":1584081829.864637,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584081829.865223,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mystacks-bot-awesome-go-master-xldps-4[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-mk8dg[0m
+{"level":"warn","ts":1584081830.759193,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584081830.7599688,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mystacks-bot-awesome-go-master-xldps-4[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mystacks-bot-awesome-go-master-xldps-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-ystacks-bot-awesome-go-master-xldps-2pjf9[0m
+{"level":"warn","ts":1584081836.0569482,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584081840.6465428,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/***********/awesome-go.git @ v0.0.14 in path /workspace/source"}
+
+Showing logs for build [32mystacks-bot-awesome-go-master-xldps-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mystacks-bot-awesome-go-master-xldps-4[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mystacks-bot-awesome-go-master-xldps-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/awesome-go main.go
+
+Showing logs for build [32mystacks-bot-awesome-go-master-xldps-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/awesome-go"]                   
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/03/13 06:44:19 pushed blob: sha256:dc3b6e3c27d9b60e873006e6dc405f89a6f39cb35777f5be748e86f75b955a7f
+2020/03/13 06:44:26 pushed blob: sha256:3f461a00323a715787daf93f730381c8ccf81a1fc6de8b2422c3d56a602d3ad5
+2020/03/13 06:44:26 index.docker.io/ystacks/awesome-go:0.0.14: digest: sha256:f7f0f293de21800bca811cff52d28ababe51385963cb6a6a1dddaf25880cb210 size: 428
+
+Showing logs for build [32mystacks-bot-awesome-go-master-xldps-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mystacks-bot-awesome-go-master-xldps-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/awesome-go to an unshallow repository
+Generating change log from git ref e9f49d7bc2defb1c0e853686cb1658dfad23a7da => 5440da64f66219e08601cbd2eed99d2e19ab9210
+WARNING: No release found for ***********/awesome-go and tag v0.0.14 so creating a new release
+Updated the release information at https://github.com/***********/awesome-go/releases/tag/v0.0.14
+generated: /workspace/source/charts/awesome-go/templates/release.yaml
+Created Release awesome-go-0-0-14 resource in namespace **
+Updating PipelineActivity ***********-awesome-go-master-4 with version 0.0.14
+Updated PipelineActivities ***********-awesome-go-master-4 with release notes URL: https://github.com/***********/awesome-go/releases/tag/v0.0.14
+
+Showing logs for build [32mystacks-bot-awesome-go-master-xldps-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file awesome-go-0.0.14.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mystacks-bot-awesome-go-master-xldps-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app awesome-go version 0.0.14 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/***********/environment-default-staging/pull/2
+Added label updatebot to Pull Request https://github.com/***********/environment-default-staging/pull/2
+WARNING: Failed to query the Pull Request last commit status for https://github.com/***********/environment-default-staging/pull/2 ref 62140171c9b18c0553183607e81ec3e1a456c598 Could not find a status for repository ***********/environment-default-staging with ref 62140171c9b18c0553183607e81ec3e1a456c598
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/2
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/2
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/2
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/2
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/2
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/2
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/2
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/2
+Pull Request https://github.com/***********/environment-default-staging/pull/2 is merged at sha 683126a78341e902a424375219b10542eaf88586
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names awesome-go, **-awesome-go, **-staging-awesome-go
