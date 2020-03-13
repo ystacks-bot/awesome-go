@@ -1,0 +1,66 @@
+
+Showing logs for build [32mystacks-bot-awesome-go-master-7llck-2[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-mf88c[0m
+{"level":"warn","ts":1584078638.107937,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584078638.1082256,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mystacks-bot-awesome-go-master-7llck-2[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-jvrnz[0m
+{"level":"warn","ts":1584078639.1156955,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584078639.1165435,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mystacks-bot-awesome-go-master-7llck-2[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mystacks-bot-awesome-go-master-7llck-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-ystacks-bot-awesome-go-master-7llck-fnmmd[0m
+{"level":"warn","ts":1584078644.319875,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584078648.0056581,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/***********/awesome-go.git @ v0.0.12 in path /workspace/source"}
+
+Showing logs for build [32mystacks-bot-awesome-go-master-7llck-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mystacks-bot-awesome-go-master-7llck-2[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mystacks-bot-awesome-go-master-7llck-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/awesome-go main.go
+
+Showing logs for build [32mystacks-bot-awesome-go-master-7llck-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/awesome-go"]                   
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/03/13 05:51:17 pushed blob: sha256:001d5429a0c5d04f04397c61b89f60fafafa043db7c4e9c1b2ec52ca69788e70
+2020/03/13 05:51:25 pushed blob: sha256:fc26e69e3bef2183ffe64aa2ace7f6eb02c9c6ffd117d03d2bf59710fa1ac460
+2020/03/13 05:51:26 index.docker.io/ystacks/awesome-go:0.0.12: digest: sha256:cb322c5907a8b080306ac518f76d89dc3560ead83b4289b92b1fa2365a745cbb size: 428
+
+Showing logs for build [32mystacks-bot-awesome-go-master-7llck-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mystacks-bot-awesome-go-master-7llck-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/awesome-go to an unshallow repository
+Generating change log from git ref d2138603a4eb5017c82996dd2c2b3fa0ba15f078 => 0c938c6abc783f5e92dbae79f6bce581e907b563
+WARNING: No release found for ***********/awesome-go and tag v0.0.12 so creating a new release
+Updated the release information at https://github.com/***********/awesome-go/releases/tag/v0.0.12
+generated: /workspace/source/charts/awesome-go/templates/release.yaml
+Created Release awesome-go-0-0-12 resource in namespace **
+Updating PipelineActivity ***********-awesome-go-master-2 with version 0.0.12
+Updated PipelineActivities ***********-awesome-go-master-2 with release notes URL: https://github.com/***********/awesome-go/releases/tag/v0.0.12
+
+Showing logs for build [32mystacks-bot-awesome-go-master-7llck-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+error: failed to build dependencies for chart from directory '.': failed to add chart repositories: failed to add the Helm repository with URL 'http://jenkins-x-chartmuseum:8080': prompting for creds for http://jenkins-x-chartmuseum:8080: checking status code of http://jenkins-x-chartmuseum:8080/index.yaml: Get http://jenkins-x-chartmuseum:8080/index.yaml: dial tcp 10.43.135.224:8080: connect: connection refused
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-helm-release'. The execution of the pipeline has stopped.[0m
