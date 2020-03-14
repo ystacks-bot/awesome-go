@@ -1,29 +1,29 @@
 
-Showing logs for build [32mystacks-bot-awesome-go-master-z8l98-8[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-tnbws[0m
-{"level":"warn","ts":1584058455.1089132,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
-{"level":"info","ts":1584058455.110249,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Showing logs for build [32mystacks-bot-awesome-go-master-l4wxn-8[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-g6pnn[0m
+{"level":"warn","ts":1584190193.448866,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584190193.449187,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
 
-Showing logs for build [32mystacks-bot-awesome-go-master-z8l98-8[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-cjd78[0m
-{"level":"warn","ts":1584058456.1143272,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
-{"level":"info","ts":1584058456.1154275,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+Showing logs for build [32mystacks-bot-awesome-go-master-l4wxn-8[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-wsq5d[0m
+{"level":"warn","ts":1584190193.7922783,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584190193.793702,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
 
-Showing logs for build [32mystacks-bot-awesome-go-master-z8l98-8[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+Showing logs for build [32mystacks-bot-awesome-go-master-l4wxn-8[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
 
-Showing logs for build [32mystacks-bot-awesome-go-master-z8l98-8[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-ystacks-bot-awesome-go-master-z8l98-hxwbz[0m
-{"level":"warn","ts":1584058462.309292,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
-{"level":"info","ts":1584058465.6298676,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/***********/awesome-go.git @ v0.0.8 in path /workspace/source"}
+Showing logs for build [32mystacks-bot-awesome-go-master-l4wxn-8[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-ystacks-bot-awesome-go-master-l4wxn-2vlpp[0m
+{"level":"warn","ts":1584190199.8925128,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584190204.3711052,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/***********/awesome-go.git @ v0.0.18 in path /workspace/source"}
 
-Showing logs for build [32mystacks-bot-awesome-go-master-z8l98-8[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
-Using SHAs from PULL_REFS=master:
+Showing logs for build [32mystacks-bot-awesome-go-master-l4wxn-8[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:f98da74fc3892c701b71cea94aa413c050c21e9c
 WARNING: no SHAs to merge, falling back to initial cloned commit
 
-Showing logs for build [32mystacks-bot-awesome-go-master-z8l98-8[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Showing logs for build [32mystacks-bot-awesome-go-master-l4wxn-8[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
 Generated Git credentials file /workspace/xdg_config/git/credentials
 
-Showing logs for build [32mystacks-bot-awesome-go-master-z8l98-8[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+Showing logs for build [32mystacks-bot-awesome-go-master-l4wxn-8[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
 CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/awesome-go main.go
 
-Showing logs for build [32mystacks-bot-awesome-go-master-z8l98-8[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+Showing logs for build [32mystacks-bot-awesome-go-master-l4wxn-8[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
 [36mINFO[0m[0000] No base image, nothing to extract            
 [36mINFO[0m[0000] cmd: EXPOSE                                  
 [36mINFO[0m[0000] Adding exposed port: 8080/tcp                
@@ -39,6 +39,59 @@ Showing logs for build [32mystacks-bot-awesome-go-master-z8l98-8[0m stage [32
 [36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
 [36mINFO[0m[0000] COPY ./bin/ /                                
 [36mINFO[0m[0000] Taking snapshot of files...                  
-error pushing image: failed to push to destination index.docker.io/***********/awesome-go:0.0.8: unsupported status code 401; body: 
-[31m
-Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
+2020/03/14 12:50:31 pushed blob: sha256:496a43e6ac25454e7ae73088d44afc4d60f89569587569affbbab9df3f2c0459
+2020/03/14 12:52:53 pushed blob: sha256:5dd0dabfba044dd8c01f42c92421663f00d7130e7ebd28358574849d0910c9c5
+2020/03/14 12:52:54 index.docker.io/ystacks/awesome-go:0.0.18: digest: sha256:5852631ffa48fb1b0cbc383dfb3bfb893b4ddd1f05ffe1fd63cc9565fe3d40c6 size: 428
+
+Showing logs for build [32mystacks-bot-awesome-go-master-l4wxn-8[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mystacks-bot-awesome-go-master-l4wxn-8[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/awesome-go to an unshallow repository
+Generating change log from git ref ecde066c375c1dbd41bb9d7120f0e39316400728 => 464c14b364169a76c2b49b99fa6b9f531d5d424a
+Associating user ********* in users.jenkins.io with email jiangyt.cn@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user ********* in users.jenkins.io
+WARNING: Failed to enrich commit f98da74fc3892c701b71cea94aa413c050c21e9c with issues: User.jenkins.io "*********" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email noreply@github.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit f98da74fc3892c701b71cea94aa413c050c21e9c with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for ***********/awesome-go and tag v0.0.18 so creating a new release
+Updated the release information at https://github.com/***********/awesome-go/releases/tag/v0.0.18
+generated: /workspace/source/charts/awesome-go/templates/release.yaml
+Created Release awesome-go-0-0-18 resource in namespace **
+Updating PipelineActivity ***********-awesome-go-master-8 with version 0.0.18
+Updated PipelineActivities ***********-awesome-go-master-8 with release notes URL: https://github.com/***********/awesome-go/releases/tag/v0.0.18
+
+Showing logs for build [32mystacks-bot-awesome-go-master-l4wxn-8[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file awesome-go-0.0.18.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mystacks-bot-awesome-go-master-l4wxn-8[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app awesome-go version 0.0.18 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/***********/environment-default-staging/pull/6
+Added label updatebot to Pull Request https://github.com/***********/environment-default-staging/pull/6
+WARNING: Failed to query the Pull Request last commit status for https://github.com/***********/environment-default-staging/pull/6 ref 5a1874685861688b0589b19ffaff7c5f633c96a6 Could not find a status for repository ***********/environment-default-staging with ref 5a1874685861688b0589b19ffaff7c5f633c96a6
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/6
+got git provider status pending from PR https://github.com/***********/environment-default-staging/pull/6
+Pull Request https://github.com/***********/environment-default-staging/pull/6 is merged at sha 5131a73ca1d466406d9ef173efaff0ca0cb2e985
+Pull Request merged but we are not waiting for the update pipeline to complete!
