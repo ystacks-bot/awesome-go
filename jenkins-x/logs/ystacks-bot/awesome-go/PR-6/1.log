@@ -1,0 +1,149 @@
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-6-pr-kh7m2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-z6sst[0m
+{"level":"warn","ts":1584168594.7654557,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584168594.7657363,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-6-pr-kh7m2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-29tcd[0m
+{"level":"warn","ts":1584168595.4092803,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584168595.4100876,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-6-pr-kh7m2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-6-pr-kh7m2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-ystacks-bot-awesome-go-pr-6-pr-kh7m2-f8gxs[0m
+{"level":"warn","ts":1584168601.5939505,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584168604.4797387,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/***********/awesome-go.git @ master in path /workspace/source"}
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-6-pr-kh7m2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:496e5efd6fde7ff780c6a79e52bad466c6756bde,6:045d35dc1e5872562e0cf9e3e16b9ce9eb9a81c5
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 045d35dc1e5872562e0cf9e3e16b9ce9eb9a81c5: 496e5efd6fde7ff780c6a79e52bad466c6756bde:
+DEBUG: ran git fetch --unshallow origin 045d35dc1e5872562e0cf9e3e16b9ce9eb9a81c5: 496e5efd6fde7ff780c6a79e52bad466c6756bde: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 496e5efd6fde7ff780c6a79e52bad466c6756bde
+DEBUG: ran git reset --hard 496e5efd6fde7ff780c6a79e52bad466c6756bde in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 045d35dc1e5872562e0cf9e3e16b9ce9eb9a81c5
+DEBUG: ran git merge 045d35dc1e5872562e0cf9e3e16b9ce9eb9a81c5 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 496e5efd6fde7ff780c6a79e52bad466c6756bde..HEAD
+Merged SHA 045d35dc1e5872562e0cf9e3e16b9ce9eb9a81c5 with commit message 'fix: update docker repo org owner' into base branch master
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-6-pr-kh7m2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-linux[0m
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/awesome-go main.go
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-6-pr-kh7m2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/awesome-go"]                   
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/03/14 06:50:28 pushed blob: sha256:6bc298567364ab4605302befca6c82fbe3e770c40e76ed90b2e86db906cec017
+2020/03/14 06:50:32 pushed blob: sha256:41d5de5c0c019895b2748045f67e18f7dd3a730e8a70e302a44e70c90871373e
+2020/03/14 06:50:33 index.docker.io/ystacks/awesome-go:0.0.0-SNAPSHOT-PR-6-1: digest: sha256:3e7cfb32d4988b527f5bc82380bd99f5bf06ebdc5b2d4ca01164d94f6a3abb23 size: 428
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-6-pr-kh7m2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-6-pr-kh7m2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-6-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-6-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: docker.io\/*********\/awesome-go|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-6-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-6-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-6-pr-kh7m2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Found commit author match for: ********* with email address: jiangyt.cn@gmail.com
+Created environment ***********-awesome-go-pr-6
+Namespace **-***********-awesome-go-pr-6 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: 192.168.1.12.nip.io
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: docker.io/ystacks/awesome-go
+    tag: 0.0.0-SNAPSHOT-PR-6-1
+
+Updating PipelineActivities ***********-awesome-go-pr-6-1 which has status Running
+Preview application is now available at: http://awesome-go.**-***********-awesome-go-pr-6.192.168.1.12.nip.io
+Triggering post preview Job owasp-zap in namespace **-***********-awesome-go-pr-6
+waiting for Job owasp-zap in namespace **-***********-awesome-go-pr-6 to complete...
+2020-03-14 06:52:03,929 Params: ['zap-x.sh', '-daemon', '-port', '42769', '-host', '0.0.0.0', '-config', 'api.disablekey=true', '-config', 'api.addrs.addr.name=.*', '-config', 'api.addrs.addr.regex=true', '-config', 'spider.maxDuration=1', '-addonupdate', '-addoninstall', 'pscanrulesBeta']
+_XSERVTransmkdir: ERROR: euid != 0,directory /tmp/.X11-unix will not be created.
+Total of 3 URLs
+PASS: Cookie No HttpOnly Flag [10010]
+PASS: Cookie Without Secure Flag [10011]
+PASS: Incomplete or No Cache-control and Pragma HTTP Header Set [10015]
+PASS: Cross-Domain JavaScript Source File Inclusion [10017]
+PASS: Content-Type Header Missing [10019]
+PASS: X-Frame-Options Header Scanner [10020]
+PASS: X-Content-Type-Options Header Missing [10021]
+PASS: Information Disclosure - Debug Error Messages [10023]
+PASS: Information Disclosure - Sensitive Information in URL [10024]
+PASS: Information Disclosure - Sensitive Information in HTTP Referrer Header [10025]
+PASS: HTTP Parameter Override [10026]
+PASS: Information Disclosure - Suspicious Comments [10027]
+PASS: Open Redirect [10028]
+PASS: Cookie Poisoning [10029]
+PASS: User Controllable Charset [10030]
+PASS: User Controllable HTML Element Attribute (Potential XSS) [10031]
+PASS: Viewstate Scanner [10032]
+PASS: Directory Browsing [10033]
+PASS: Heartbleed OpenSSL Vulnerability (Indicative) [10034]
+PASS: Strict-Transport-Security Header Scanner [10035]
+PASS: HTTP Server Response Header Scanner [10036]
+PASS: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s) [10037]
+PASS: Content Security Policy (CSP) Header Not Set [10038]
+PASS: X-Backend-Server Header Information Leak [10039]
+PASS: Secure Pages Include Mixed Content [10040]
+PASS: HTTP to HTTPS Insecure Transition in Form Post [10041]
+PASS: HTTPS to HTTP Insecure Transition in Form Post [10042]
+PASS: User Controllable JavaScript Event (XSS) [10043]
+PASS: Big Redirect Detected (Potential Sensitive Information Leak) [10044]
+PASS: Retrieved from Cache [10050]
+PASS: X-ChromeLogger-Data (XCOLD) Header Information Leak [10052]
+PASS: Cookie Without SameSite Attribute [10054]
+PASS: CSP Scanner [10055]
+PASS: X-Debug-Token Information Leak [10056]
+PASS: Username Hash Found [10057]
+PASS: X-AspNet-Version Response Header Scanner [10061]
+PASS: PII Disclosure [10062]
+PASS: Timestamp Disclosure [10096]
+PASS: Hash Disclosure [10097]
+PASS: Cross-Domain Misconfiguration [10098]
+PASS: Weak Authentication Method [10105]
+PASS: Reverse Tabnabbing [10108]
+PASS: Absence of Anti-CSRF Tokens [10202]
+PASS: Private IP Disclosure [2]
+PASS: Session ID in URL Rewrite [3]
+PASS: Script Passive Scan Rules [50001]
+PASS: Insecure JSF ViewState [90001]
+PASS: Charset Mismatch [90011]
+PASS: Application Error Disclosure [90022]
+PASS: Loosely Scoped Cookie [90033]
+FAIL-NEW: 0	FAIL-INPROG: 0	WARN-NEW: 0	WARN-INPROG: 0	INFO: 0	IGNORE: 0	PASS: 50
