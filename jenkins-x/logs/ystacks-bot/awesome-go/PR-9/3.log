@@ -1,0 +1,57 @@
+
+Showing logs for build [32mmeta-ystacks-bot-awesome-go-pr-84pqn-3[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-82jhd[0m
+{"level":"warn","ts":1584179936.1284773,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584179936.1300993,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-ystacks-bot-awesome-go-pr-84pqn-3[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-8ffx6[0m
+{"level":"warn","ts":1584179936.867091,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584179936.8713243,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mmeta-ystacks-bot-awesome-go-pr-84pqn-3[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmeta-ystacks-bot-awesome-go-pr-84pqn-3[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-ystacks-bot-awesome-go-pr-klfc7[0m
+{"level":"warn","ts":1584179942.0131083,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584179944.457878,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/***********/awesome-go.git @ 7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4 in path /workspace/source"}
+
+Showing logs for build [32mmeta-ystacks-bot-awesome-go-pr-84pqn-3[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4,9:241c623a3c995ee42cde796a4a467b60c1adf51d
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 241c623a3c995ee42cde796a4a467b60c1adf51d: 7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4:
+DEBUG: ran git fetch --unshallow origin 241c623a3c995ee42cde796a4a467b60c1adf51d: 7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4
+DEBUG: ran git reset --hard 7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 241c623a3c995ee42cde796a4a467b60c1adf51d
+DEBUG: ran git merge 241c623a3c995ee42cde796a4a467b60c1adf51d in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4..HEAD
+Merged SHA 241c623a3c995ee42cde796a4a467b60c1adf51d with commit message 'fix: update owner list' into base branch master
+Merged SHA 20ee3786d5beedb72becedf9c11fa0bfc9b9df94 with commit message 'fix: update correct image org name' into base branch master
+Merged SHA ff112a9f85c004fb55d843ca33f4e501e1a3837f with commit message 'feat: update the output for testing image repo owner in preview env' into base branch master
+
+Showing logs for build [32mmeta-ystacks-bot-awesome-go-pr-84pqn-3[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git fetch origin --unshallow 241c623a3c995ee42cde796a4a467b60c1adf51d: 7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4:
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git fetch origin 241c623a3c995ee42cde796a4a467b60c1adf51d: 7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4:
+DEBUG: ran git fetch origin 241c623a3c995ee42cde796a4a467b60c1adf51d: 7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git rev-parse --is-shallow-repository
+DEBUG: Unshallowed git repo in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4
+DEBUG: ran git reset --hard 7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4 in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 241c623a3c995ee42cde796a4a467b60c1adf51d
+DEBUG: ran git merge 241c623a3c995ee42cde796a4a467b60c1adf51d in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 7d3e316fb24b8d7e2ed4b22efeda2d576074e0e4..HEAD
+Merged SHA 241c623a3c995ee42cde796a4a467b60c1adf51d with commit message 'fix: update owner list' into base branch master
+Merged SHA 20ee3786d5beedb72becedf9c11fa0bfc9b9df94 with commit message 'fix: update correct image org name' into base branch master
+Merged SHA ff112a9f85c004fb55d843ca33f4e501e1a3837f with commit message 'feat: update the output for testing image repo owner in preview env' into base branch master
+
+Showing logs for build [32mmeta-ystacks-bot-awesome-go-pr-84pqn-3[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+error: fetching tags: git output: fatal: unable to access 'https://github.com/*********/jenkins-x-versions.git/': Failed connect to github.com:443; Connection timed out: failed to run 'git fetch --tags' command in directory '/builder/home/.**/jenkins-x-versions', output: 'fatal: unable to access 'https://github.com/*********/jenkins-x-versions.git/': Failed connect to github.com:443; Connection timed out'
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-effective-pipeline'. The execution of the pipeline has stopped.[0m
