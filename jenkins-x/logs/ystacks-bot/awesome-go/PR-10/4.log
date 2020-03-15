@@ -1,0 +1,106 @@
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-10-pr-2vzst-4[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-9xwq5[0m
+{"level":"warn","ts":1584251265.7506216,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584251265.7510622,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-10-pr-2vzst-4[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-65wb5[0m
+{"level":"warn","ts":1584251266.277299,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584251266.28155,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-10-pr-2vzst-4[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-10-pr-2vzst-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-ystacks-bot-awesome-go-pr-10-pr-2vzst-685sc[0m
+{"level":"warn","ts":1584251272.403955,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584251276.5892024,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/***********/awesome-go.git @ master in path /workspace/source"}
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-10-pr-2vzst-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:f98da74fc3892c701b71cea94aa413c050c21e9c,10:8286c85c888bbfc5afcc6508d015add79d671a8f
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 8286c85c888bbfc5afcc6508d015add79d671a8f: f98da74fc3892c701b71cea94aa413c050c21e9c:
+DEBUG: ran git fetch --unshallow origin 8286c85c888bbfc5afcc6508d015add79d671a8f: f98da74fc3892c701b71cea94aa413c050c21e9c: in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard f98da74fc3892c701b71cea94aa413c050c21e9c
+DEBUG: ran git reset --hard f98da74fc3892c701b71cea94aa413c050c21e9c in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 8286c85c888bbfc5afcc6508d015add79d671a8f
+DEBUG: ran git merge 8286c85c888bbfc5afcc6508d015add79d671a8f in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e f98da74fc3892c701b71cea94aa413c050c21e9c..HEAD
+Merged SHA 8286c85c888bbfc5afcc6508d015add79d671a8f with commit message 'feat: update output with pr owner' into base branch master
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-10-pr-2vzst-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-linux[0m
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/awesome-go main.go
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-10-pr-2vzst-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/awesome-go"]                   
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/03/15 05:48:33 pushed blob: sha256:ee64472a3ef402deded68f12399f3c0678171318e2a54e1a1376488b6be398cc
+2020/03/15 05:48:56 pushed blob: sha256:4ca470c1e0f354fe94a8f226d61f27e0e28c77a3f2c04bf09a8c0353ed70103a
+2020/03/15 05:48:57 index.docker.io/ystacks/awesome-go:0.0.0-SNAPSHOT-PR-10-4: digest: sha256:325ed8e753b3c625e911b7fb40904e32e2d7e18357e7a699eab6477ae619f47e size: 428
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-10-pr-2vzst-4[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-10-pr-2vzst-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-10-4/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-10-4/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: docker.io\/ystacks\/awesome-go|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-10-4/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-10-4" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-10-pr-2vzst-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Found commit author match for: ********* with email address: jiangyt.cn@gmail.com
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: ing.light.caas.ystacks.com
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: docker.io/ystacks/awesome-go
+    tag: 0.0.0-SNAPSHOT-PR-10-4
+
+Updating PipelineActivities ***********-awesome-go-pr-10-4 which has status Running
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: read udp 10.42.0.42:40052->10.43.0.10:53: i/o timeout, delaying for: 1.070673276s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving, delaying for: 869.180435ms
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving, delaying for: 2.899361059s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving, delaying for: 4.19124024s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving, delaying for: 4.292766941s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving, delaying for: 8.691348974s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving, delaying for: 10.649237398s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving, delaying for: 8.575498572s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving, delaying for: 19.156751617s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving, delaying for: 51.203896444s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving, delaying for: 57.181079232s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving, delaying for: 39.110604125s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving, delaying for: 1m12.982102494s
+error: error checking if preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io is available: preview application http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io not available, error was Get http://awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io: dial tcp: lookup awesome-go.**-***********-awesome-go-pr-10.192.168.1.12.nip.io on 10.43.0.10:53: server misbehaving
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-preview'. The execution of the pipeline has stopped.[0m
