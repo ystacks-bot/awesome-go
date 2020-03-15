@@ -1,0 +1,166 @@
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-11-pr-vvkrb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-mkpvg[0m
+{"level":"warn","ts":1584258569.3799114,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584258569.3808072,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-11-pr-vvkrb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-r5jj7[0m
+{"level":"warn","ts":1584258570.3595753,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584258570.360669,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-11-pr-vvkrb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-11-pr-vvkrb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-ystacks-bot-awesome-go-pr-11-pr-vvkrb-w96t5[0m
+{"level":"warn","ts":1584258575.5598366,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584258583.7335339,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/***********/awesome-go.git @ master in path /workspace/source"}
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-11-pr-vvkrb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:800fc272439de756a4d7e3ea9ff2a885625347e2,11:bc11921d59140005df2e362d927be4b6fb2d7903
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow bc11921d59140005df2e362d927be4b6fb2d7903: 800fc272439de756a4d7e3ea9ff2a885625347e2:
+DEBUG: ran git fetch --unshallow origin bc11921d59140005df2e362d927be4b6fb2d7903: 800fc272439de756a4d7e3ea9ff2a885625347e2: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 800fc272439de756a4d7e3ea9ff2a885625347e2
+DEBUG: ran git reset --hard 800fc272439de756a4d7e3ea9ff2a885625347e2 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge bc11921d59140005df2e362d927be4b6fb2d7903
+DEBUG: ran git merge bc11921d59140005df2e362d927be4b6fb2d7903 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 800fc272439de756a4d7e3ea9ff2a885625347e2..HEAD
+Merged SHA bc11921d59140005df2e362d927be4b6fb2d7903 with commit message 'chore: update production canary ingress domain' into base branch master
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-11-pr-vvkrb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-linux[0m
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/awesome-go main.go
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-11-pr-vvkrb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/awesome-go"]                   
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/03/15 07:50:17 pushed blob: sha256:fc9e57e0f6ce99a87c31d3aa068317eff3b6479a43a160573e7082964723c26f
+2020/03/15 07:50:36 pushed blob: sha256:d40a2879579d728369ef5f82ab18d771c7b19469431c4b058b840c681360a641
+2020/03/15 07:50:37 index.docker.io/ystacks/awesome-go:0.0.0-SNAPSHOT-PR-11-1: digest: sha256:1b4dfa98972911ee5578de50ccb807e3eabcf8ea1624e2981aa745b302a8463c size: 428
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-11-pr-vvkrb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-11-pr-vvkrb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-11-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-11-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: docker.io\/ystacks\/awesome-go|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-11-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-11-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mystacks-bot-awesome-go-pr-11-pr-vvkrb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Found commit author match for: ********* with email address: jiangyt.cn@gmail.com
+Created environment ***********-awesome-go-pr-11
+Namespace **-***********-awesome-go-pr-11 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: ing.light.caas.ystacks.com
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: docker.io/ystacks/awesome-go
+    tag: 0.0.0-SNAPSHOT-PR-11-1
+
+Updating PipelineActivities ***********-awesome-go-pr-11-1 which has status Running
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com not available, error was 503 503 Service Temporarily Unavailable, delaying for: 714.263872ms
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com not available, error was 503 503 Service Temporarily Unavailable, delaying for: 1.453334767s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com not available, error was 503 503 Service Temporarily Unavailable, delaying for: 2.652940521s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com not available, error was 503 503 Service Temporarily Unavailable, delaying for: 2.905441032s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com not available, error was 503 503 Service Temporarily Unavailable, delaying for: 4.015140863s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com not available, error was 503 503 Service Temporarily Unavailable, delaying for: 5.365612089s
+WARNING: preview application http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com not available, error was 503 503 Service Temporarily Unavailable, delaying for: 11.661953174s
+Preview application is now available at: http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com
+Triggering post preview Job owasp-zap in namespace **-***********-awesome-go-pr-11
+waiting for Job owasp-zap in namespace **-***********-awesome-go-pr-11 to complete...
+Error from server (BadRequest): container "owasp-zap" in pod "owasp-zap-dzgrw" is waiting to start: ContainerCreating
+ERROR: Error: Command failed  kubectl logs -f job/owasp-zap -n **-***********-awesome-go-pr-11
+2020-03-15 07:55:13,087 Params: ['zap-x.sh', '-daemon', '-port', '48970', '-host', '0.0.0.0', '-config', 'api.disablekey=true', '-config', 'api.addrs.addr.name=.*', '-config', 'api.addrs.addr.regex=true', '-config', 'spider.maxDuration=1', '-addonupdate', '-addoninstall', 'pscanrulesBeta']
+_XSERVTransmkdir: ERROR: euid != 0,directory /tmp/.X11-unix will not be created.
+Total of 3 URLs
+PASS: Cookie No HttpOnly Flag [10010]
+PASS: Cookie Without Secure Flag [10011]
+PASS: Incomplete or No Cache-control and Pragma HTTP Header Set [10015]
+PASS: Cross-Domain JavaScript Source File Inclusion [10017]
+PASS: Content-Type Header Missing [10019]
+PASS: X-Frame-Options Header Scanner [10020]
+PASS: Information Disclosure - Debug Error Messages [10023]
+PASS: Information Disclosure - Sensitive Information in URL [10024]
+PASS: Information Disclosure - Sensitive Information in HTTP Referrer Header [10025]
+PASS: HTTP Parameter Override [10026]
+PASS: Information Disclosure - Suspicious Comments [10027]
+PASS: Open Redirect [10028]
+PASS: Cookie Poisoning [10029]
+PASS: User Controllable Charset [10030]
+PASS: User Controllable HTML Element Attribute (Potential XSS) [10031]
+PASS: Viewstate Scanner [10032]
+PASS: Directory Browsing [10033]
+PASS: Heartbleed OpenSSL Vulnerability (Indicative) [10034]
+PASS: Strict-Transport-Security Header Scanner [10035]
+PASS: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s) [10037]
+PASS: Content Security Policy (CSP) Header Not Set [10038]
+PASS: X-Backend-Server Header Information Leak [10039]
+PASS: Secure Pages Include Mixed Content [10040]
+PASS: HTTP to HTTPS Insecure Transition in Form Post [10041]
+PASS: HTTPS to HTTP Insecure Transition in Form Post [10042]
+PASS: User Controllable JavaScript Event (XSS) [10043]
+PASS: Big Redirect Detected (Potential Sensitive Information Leak) [10044]
+PASS: Retrieved from Cache [10050]
+PASS: X-ChromeLogger-Data (XCOLD) Header Information Leak [10052]
+PASS: Cookie Without SameSite Attribute [10054]
+PASS: CSP Scanner [10055]
+PASS: X-Debug-Token Information Leak [10056]
+PASS: Username Hash Found [10057]
+PASS: X-AspNet-Version Response Header Scanner [10061]
+PASS: PII Disclosure [10062]
+PASS: Timestamp Disclosure [10096]
+PASS: Hash Disclosure [10097]
+PASS: Cross-Domain Misconfiguration [10098]
+PASS: Weak Authentication Method [10105]
+PASS: Reverse Tabnabbing [10108]
+PASS: Absence of Anti-CSRF Tokens [10202]
+PASS: Private IP Disclosure [2]
+PASS: Session ID in URL Rewrite [3]
+PASS: Script Passive Scan Rules [50001]
+PASS: Insecure JSF ViewState [90001]
+PASS: Charset Mismatch [90011]
+PASS: Application Error Disclosure [90022]
+PASS: Loosely Scoped Cookie [90033]
+WARN-NEW: X-Content-Type-Options Header Missing [10021] x 4 
+	http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com/ (200 OK)
+	http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com/robots.txt (200 OK)
+	http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com (200 OK)
+	http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com/sitemap.xml (200 OK)
+WARN-NEW: Server Leaks Version Information via "Server" HTTP Response Header Field [10036] x 4 
+	http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com/ (200 OK)
+	http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com/robots.txt (200 OK)
+	http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com (200 OK)
+	http://awesome-go.**-***********-awesome-go-pr-11.ing.light.caas.ystacks.com/sitemap.xml (200 OK)
+FAIL-NEW: 0	FAIL-INPROG: 0	WARN-NEW: 2	WARN-INPROG: 0	INFO: 0	IGNORE: 0	PASS: 48
